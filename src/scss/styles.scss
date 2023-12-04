@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Kanit', sans-serif, FontAwesome;
+}
+
+/* Color Palette */
+$redCrayola: #ED254E;
+$naplesYellow: #F9DC5C;
+$teaGreen: #C2EABD;
+$oxfordBlue: #011936;
+$Charcoal: #465362;
+
+body {
+    background-color: $oxfordBlue;
+    .navMenu {
+        text-align: center;
+        padding: 0.5rem;     
+        .active { color: #ED254E; text-shadow: 0px 0px 8px rgba(237, 37, 78, 1); }       
+        a {
+            color: white;
+            font-size: 16px; text-decoration: none; text-transform: uppercase;  
+            padding: 0 1em; border-right: 2px dotted $redCrayola;         
+            transition: all 0.2s ease-in-out;
+            &:last-child { border-right: 0; }
+            &:hover { color: $redCrayola; }
+        }
+    }
+
+    .container, .border-radius-properties, .border-rad-individual, .border-preview, .preview, .border-code { 
+        display: flex; align-items: center; justify-content: center; flex-wrap: wrap; 
+    }
+
+    .container {
+        min-height: 90vh;
+        .card-container {
+            width: 550px; min-width: auto; height: auto;
+            padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
+            background-color: $teaGreen; text-align: center;              
+
+            .title {
+                font-size: 14px; font-weight: bold;
+                color: $oxfordBlue; user-select: none;
+            }
+            .border-radius-properties {                 
+                margin-top: 5px;  
+               
+                .column {
+                    width: 100%; height: auto;
+                    padding: 5px; border-radius: 5px;
+                    background-color: $redCrayola; color: white; border: 2px solid $oxfordBlue;                     
+
+                    .input-group {
+                        align-items: center; justify-content: center; flex-wrap: nowrap; 
+                        label {                       
+                            width: 150px; min-width: fit-content; height: 25px;
+                            font-size: 15px; margin-bottom: 0;
+                        }   
+                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+                            -webkit-appearance: none; margin: 0;
+                        }
+                        input[type = number] {
+                            width: 25px; height: 25px;
+                            appearance: none; -moz-appearance: textfield;
+                            text-align: center; font-size: 9px;
+                            border: 0; margin: 0 !important; border-radius: 5px !important;
+                        }        
+                        .form-range {
+                            width: 50%; height: 25px; cursor: pointer;
+                            margin-inline: 10px !important;                                             
+                        }
+                        span { 
+                            margin-left: 5px !important; cursor: default; 
+                            font-size: 12px; line-height: 2;
+                        }
+                    }    
+                }
+                .individual { 
+                    display: none;
+                    .border-rad-individual {                        
+                        flex-wrap: nowrap; justify-content: space-between;
+                        border-bottom: 2px dotted $oxfordBlue; padding: 5px 0;
+
+                        label {
+                            width: 210px !important; height: 25px; float: left;
+                            line-height: 1.75;                            
+                        }
+                        input[type = number] {
+                           width: 30px;
+                            font-size: 10px;
+                        }                          
+                        &:last-child { border-bottom: 0; }
+                    }                                     
+                }      
+            }  
+            .form-check {
+                margin: 0; padding: 5px 0; 
+                border-bottom: 2px solid $oxfordBlue;
+                label {
+                    font-size: 15px; font-weight: bold;
+                    color: $oxfordBlue;
+                }
+                input {
+                    float: initial; margin-inline: 10px; margin-top: 0;
+                    vertical-align: middle; border-color: $oxfordBlue;
+                    cursor: pointer;
+                }
+            }
+            .border-preview {   
+                margin: 10px 0;
+                .preview {
+                    width: 135px; height: 135px !important; position: relative;
+                    background-color: $naplesYellow; border: 2px solid $oxfordBlue;
+                    span {
+                        position: absolute; color: $oxfordBlue;
+                        font-size: 16px; letter-spacing: 1px; opacity: .5; user-select: none;
+                    }
+                }
+            }
+            .border-code {
+                flex-wrap: nowrap;
+                margin-top: 10px;
+                .form-floating {
+                    width: 100%;
+                    textarea {
+                        height: fit-content;
+                        border: 2px solid $oxfordBlue; border-radius: 5px; cursor: copy;
+                        font-size: 14px; color: $oxfordBlue;      
+                        &::selection { background-color: $naplesYellow; }                  
+                    } 
+                    label { font-size: 14px; }
+                }
+                button {
+                    background-color: $redCrayola;
+                    margin-left: 5px; transition: 0.25s;
+                    &:hover { 
+                        background-color: var(--bs-btn-hover-bg); scale: 1.05;
+                    }
+                }
+            }                     
+        }
+    }
+}
