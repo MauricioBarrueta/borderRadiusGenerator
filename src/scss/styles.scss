@@ -6,11 +6,7 @@
 }
 
 /* Color Palette */
-$redCrayola: #ED254E;
-$naplesYellow: #F9DC5C;
-$teaGreen: #C2EABD;
-$oxfordBlue: #011936;
-$Charcoal: #465362;
+$redCrayola: #ED254E; $naplesYellow: #F9DC5C; $teaGreen: #C2EABD; $oxfordBlue: #011936; $Charcoal: #465362;
 
 body {
     background-color: $oxfordBlue;
@@ -21,8 +17,7 @@ body {
         a {
             color: white;
             font-size: 16px; text-decoration: none; text-transform: uppercase;  
-            padding: 0 1em; border-right: 2px dotted $redCrayola;         
-            transition: all 0.2s ease-in-out;
+            padding: 0 1em; border-right: 2px dotted $redCrayola; transition: all 0.2s ease-in-out;
             &:last-child { border-right: 0; }
             &:hover { color: $redCrayola; }
         }
@@ -35,7 +30,7 @@ body {
     .container {
         min-height: 90vh;
         .card-container {
-            width: 550px; min-width: auto; height: auto;
+            width: 600px; min-width: 430px; height: auto;
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
             background-color: $teaGreen; text-align: center;              
 
@@ -44,31 +39,26 @@ body {
                 color: $oxfordBlue; user-select: none;
             }
             .border-radius-properties {                 
-                margin-top: 5px;  
-               
+                margin-top: 5px;                 
                 .column {
                     width: 100%; height: auto;
-                    padding: 5px; border-radius: 5px;
-                    background-color: $redCrayola; color: white; border: 2px solid $oxfordBlue;                     
-
+                    padding: 5px; border-radius: 5px 5px 0 0;
+                    background-color: $redCrayola; color: white; border: 2px solid $oxfordBlue; border-bottom-style: dotted;   
                     .input-group {
-                        align-items: center; justify-content: center; flex-wrap: nowrap; 
+                        align-items: center; justify-content: center;  
                         label {                       
-                            width: 150px; min-width: fit-content; height: 25px;
+                            width: 100%; height: 25px;
                             font-size: 15px; margin-bottom: 0;
                         }   
-                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-                            -webkit-appearance: none; margin: 0;
-                        }
+                        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
                         input[type = number] {
                             width: 25px; height: 25px;
-                            appearance: none; -moz-appearance: textfield;
-                            text-align: center; font-size: 9px;
+                            appearance: none; -moz-appearance: textfield; text-align: center; font-size: 9px;
                             border: 0; margin: 0 !important; border-radius: 5px !important;
                         }        
                         .form-range {
-                            width: 50%; height: 25px; cursor: pointer;
-                            margin-inline: 10px !important;                                             
+                            width: 80%; height: 25px; cursor: pointer;
+                            margin-inline: 10px;                                             
                         }
                         span { 
                             margin-left: 5px !important; cursor: default; 
@@ -76,37 +66,39 @@ body {
                         }
                     }    
                 }
-                .individual { 
-                    display: none;
-                    .border-rad-individual {                        
-                        flex-wrap: nowrap; justify-content: space-between;
-                        border-bottom: 2px dotted $oxfordBlue; padding: 5px 0;
-
-                        label {
-                            width: 210px !important; height: 25px; float: left;
-                            line-height: 1.75;                            
-                        }
-                        input[type = number] {
-                           width: 30px;
-                            font-size: 10px;
-                        }                          
-                        &:last-child { border-bottom: 0; }
+                .column.individual { 
+                    display: none; flex-wrap: wrap;
+                    .input-group:nth-child(1), .input-group:nth-child(3) { border-right: 2px dotted $oxfordBlue; }
+                    .input-group:nth-child(3), .input-group:nth-child(4) { border-bottom: 0; }
+                    .input-group {                        
+                        width: 50%; flex-wrap: nowrap !important; 
+                        border-bottom: 2px dotted $oxfordBlue; padding: 5px;
+                        label { width: 85.5px; font-size: 14px; line-height: 1.7; }
+                        .form-range { width: 40%; margin-inline: 5px !important; }                        
                     }                                     
                 }      
             }  
+
+
             .form-check {
-                margin: 0; padding: 5px 0; 
-                border-bottom: 2px solid $oxfordBlue;
-                label {
-                    font-size: 15px; font-weight: bold;
-                    color: $oxfordBlue;
-                }
+                margin: 0; padding: 5px 0; background-color: $redCrayola; color: #FFF; 
+                border: 2px solid $oxfordBlue; border-top: 0; border-bottom-style: dotted;
+                label { font-size: 14px; line-height: 1.75; }
                 input {
                     float: initial; margin-inline: 10px; margin-top: 0;
-                    vertical-align: middle; border-color: $oxfordBlue;
-                    cursor: pointer;
+                    vertical-align: middle; border-color: $oxfordBlue; cursor: pointer;
                 }
             }
+            .reset-container {
+                background-color: $redCrayola; border: 2px solid $oxfordBlue; border-top: 0;
+                border-radius: 0 0 5px 5px; padding: 5px;
+                .reset-btn {
+                    background-color: $Charcoal;
+                    padding: 5px 10px; font-size: 12px;
+                    &:hover { background-color: #000; }
+                }
+            }
+
             .border-preview {   
                 margin: 10px 0;
                 .preview {
@@ -141,4 +133,8 @@ body {
             }                     
         }
     }
+    @media screen and (max-width: 768px) {
+        .column.individual label { font-size: 12px !important; line-height: 2 !important; } .column.individual .form-range { width: 30% !important; }        
+    }
 }
+
