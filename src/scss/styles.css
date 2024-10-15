@@ -43,7 +43,7 @@ body .container {
   min-height: 90vh;
 }
 body .container .card-container {
-  width: 600px;
+  width: 650px;
   min-width: 430px;
   height: auto;
   padding: 1em;
@@ -78,7 +78,7 @@ body .container .card-container .border-radius-properties .column .input-group {
   justify-content: center;
 }
 body .container .card-container .border-radius-properties .column .input-group label {
-  width: 100%;
+  width: 55px;
   height: 25px;
   font-size: 15px;
   margin-bottom: 0;
@@ -100,7 +100,7 @@ body .container .card-container .border-radius-properties .column .input-group i
   border-radius: 5px !important;
 }
 body .container .card-container .border-radius-properties .column .input-group .form-range {
-  width: 80%;
+  width: 60%;
   height: 25px;
   cursor: pointer;
   margin-inline: 10px;
@@ -128,7 +128,7 @@ body .container .card-container .border-radius-properties .column.individual .in
   padding: 5px;
 }
 body .container .card-container .border-radius-properties .column.individual .input-group label {
-  width: 85.5px;
+  width: 90px;
   font-size: 14px;
   line-height: 1.7;
 }
