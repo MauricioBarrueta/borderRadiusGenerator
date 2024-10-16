@@ -35,7 +35,7 @@ borderPropertiesInput.forEach(element => {
 const generateBorderRadius = () => {
     var code = checkBtn.checked ? `${topLeft.value}% ${topRight.value}% ${bottomLeft.value}% ${bottomRight.value}%` : `${borderLength.value}%`
     borderRadPreview.style.borderRadius = code
-    cssCode.value = `border-radius: ${code};\nborder: 2px solid #000000;\t/* opcional */`
+    cssCode.value = `border-radius: ${code};\n\nborder: 2px solid #000000;\t/* borde opcional */`
 }
 
 const copyBtn = document.querySelector('.copy-btn')
