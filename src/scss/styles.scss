@@ -47,7 +47,7 @@ body {
                     .input-group {
                         align-items: center; justify-content: center;  
                         label {                       
-                            width: 55px; height: 25px;
+                            width: 100%; height: 25px;
                             font-size: 15px; margin-bottom: 0;
                         }   
                         input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
@@ -114,7 +114,7 @@ body {
                 .form-floating {
                     width: 100%;
                     textarea {
-                        height: fit-content;
+                        height: 95px;
                         border: 2px solid $oxfordBlue; border-radius: 5px; cursor: copy;
                         font-size: 14px; color: $oxfordBlue;      
                         &::selection { background-color: $naplesYellow; }                  
