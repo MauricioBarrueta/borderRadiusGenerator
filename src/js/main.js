@@ -6,10 +6,9 @@ const generalOrIndividual = () => {
 
 /* Se resetean los valores cada que el elemento 'switch' cambia */
 checkBtn.addEventListener('change', () => {
-    // resetElements()
     generalOrIndividual()
     generateBorderRadius()
-    cardTitle.innerHTML = checkBtn.checked ? "Personaliza los valores de la propiedad 'border-radius' de manera individual:" : "Personaliza el valor de la propiedad 'border-radius' de manera general:" 
+    cardTitle.innerHTML = checkBtn.checked ? "Personaliza los valores individuales de la propiedad border-radius:" : "Personaliza el valor de la propiedad border-radius:" 
 })
 
 window.onload = () => {
@@ -17,7 +16,7 @@ window.onload = () => {
     resetElements()
     generalOrIndividual()
     generateBorderRadius()
-    cardTitle.innerHTML = "Personaliza el valor de la propiedad 'border-radius' de manera general:"
+    cardTitle.innerHTML = "Personaliza el valor de la propiedad border-radius:"
 }
 
 const borderLength = document.getElementById('brLength'), topLeft = document.getElementById('brTopLeft'), topLeftValue = document.getElementById('brTLRange'), topRight = document.getElementById('brTopRight'), 
@@ -35,7 +34,7 @@ borderPropertiesInput.forEach(element => {
 const generateBorderRadius = () => {
     var code = checkBtn.checked ? `${topLeft.value}% ${topRight.value}% ${bottomLeft.value}% ${bottomRight.value}%` : `${borderLength.value}%`
     borderRadPreview.style.borderRadius = code
-    cssCode.value = `border-radius: ${code};\n\nborder: 2px solid #000000;\t/* borde opcional */`
+    cssCode.value = `border-radius: ${code};\n\nborder: 2px solid #000000; //opcional`
 }
 
 const copyBtn = document.querySelector('.copy-btn')

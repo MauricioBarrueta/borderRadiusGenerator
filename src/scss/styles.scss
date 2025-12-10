@@ -28,9 +28,9 @@ body {
     }
 
     .container {
-        min-height: 90vh;
+        min-height: 95vh;
         .card-container {
-            width: 650px; min-width: 430px; height: auto;
+            width: 600px; height: auto;
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
             background-color: $teaGreen; text-align: center;              
 
@@ -39,13 +39,16 @@ body {
                 color: $oxfordBlue; user-select: none;
             }
             .border-radius-properties {                 
-                margin-top: 5px;                 
+                flex-direction: row; flex-wrap: nowrap;
+
                 .column {
-                    width: 100%; height: auto;
-                    padding: 5px; border-radius: 5px 5px 0 0;
-                    background-color: $redCrayola; color: white; border: 2px solid $oxfordBlue; border-bottom-style: dotted;   
+                    width: 100%; 
+                    padding: 1em 0.5rem; border-radius: 5px 5px 0 0; border: 2px solid $oxfordBlue; border-bottom-style: dotted; 
+                    background-color: $redCrayola; color: white;   
+
                     .input-group {
-                        align-items: center; justify-content: center;  
+                        display: flex; flex-direction: column; justify-content: center; margin-bottom: 5px; 
+  
                         label {                       
                             width: 100%; height: 25px;
                             font-size: 15px; margin-bottom: 0;
@@ -55,29 +58,30 @@ body {
                             width: 25px; height: 25px;
                             appearance: none; -moz-appearance: textfield; text-align: center; font-size: 9px;
                             border: 0; margin: 0 !important; border-radius: 5px !important;
-                        }        
+                        }  
+
+                        .input-row { display: flex; align-items: center; width: 100%; gap: 5px; }
                         .form-range {
-                            width: 60%; height: 25px; cursor: pointer;
-                            margin-inline: 10px;                                             
+                            flex: 1; height: 25px; cursor: pointer;
                         }
-                        span { 
-                            margin-left: 5px !important; cursor: default; 
-                            font-size: 12px; line-height: 2;
-                        }
+
+                        span { font-size: 10px; line-height: 2; }  
                     }    
                 }
-                .column.individual { 
-                    display: none; flex-wrap: wrap;
-                    .input-group:nth-child(1), .input-group:nth-child(3) { border-right: 2px dotted $oxfordBlue; }
-                    .input-group:nth-child(3), .input-group:nth-child(4) { border-bottom: 0; }
+
+                .individual { 
+                    display: none; flex-wrap: wrap; padding-bottom: 5px;
+
                     .input-group {                        
                         width: 50%; flex-wrap: nowrap !important; 
                         border-bottom: 2px dotted $oxfordBlue; padding: 5px;
-                        label { width: 90px; font-size: 14px; line-height: 1.7; }
-                        .form-range { width: 40%; margin-inline: 5px !important; }                        
+
+                        &:nth-child(1), &:nth-child(3) { border-right: 2px dotted $oxfordBlue; }
+                        &:nth-child(3), &:nth-child(4) { border-bottom: 0; }
                     }                                     
                 }      
             }  
+
             .form-check {
                 margin: 0; padding: 5px 0; background-color: $redCrayola; color: #FFF; 
                 border: 2px solid $oxfordBlue; border-top: 0; border-bottom-style: dotted;
@@ -87,6 +91,7 @@ body {
                     vertical-align: middle; border-color: $oxfordBlue; cursor: pointer;
                 }
             }
+
             .reset-container {
                 background-color: $redCrayola; border: 2px solid $oxfordBlue; border-top: 0;
                 border-radius: 0 0 5px 5px; padding: 5px;
@@ -94,23 +99,24 @@ body {
                     background-color: $Charcoal;
                     padding: 5px 10px; font-size: 12px;
                     &:hover { background-color: #000; }
+                    i { font-size: 10px; }
                 }
             }
 
             .border-preview {   
                 margin: 10px 0;
                 .preview {
-                    width: 135px; height: 135px !important; position: relative;
+                    width: 115px; height: 115px; position: relative;
                     background-color: $naplesYellow; border: 2px solid $oxfordBlue;
                     span {
                         position: absolute; color: $oxfordBlue;
-                        font-size: 16px; letter-spacing: 1px; opacity: .5; user-select: none;
+                        font-size: 12px; letter-spacing: 1px; opacity: .5; user-select: none;
                     }
                 }
             }
+
             .border-code {
                 flex-wrap: nowrap;
-                margin-top: 10px;
                 .form-floating {
                     width: 100%;
                     textarea {
@@ -130,9 +136,5 @@ body {
                 }
             }                     
         }
-    }
-    @media screen and (max-width: 768px) {
-        .column.individual label { font-size: 12px !important; line-height: 2 !important; } .column.individual .form-range { width: 30% !important; }        
-    }
+    }   
 }
-
