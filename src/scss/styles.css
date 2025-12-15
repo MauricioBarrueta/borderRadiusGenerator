@@ -40,10 +40,10 @@ body .container, body .border-radius-properties, body .border-rad-individual, bo
   flex-wrap: wrap;
 }
 body .container {
-  min-height: 95vh;
+  min-height: 90vh;
 }
 body .container .card-container {
-  width: 600px;
+  width: 525px;
   height: auto;
   padding: 1em;
   border-radius: 10px;
@@ -117,20 +117,15 @@ body .container .card-container .border-radius-properties .column .input-group s
 }
 body .container .card-container .border-radius-properties .individual {
   display: none;
-  flex-wrap: wrap;
-  padding-bottom: 5px;
+  flex-direction: column;
 }
-body .container .card-container .border-radius-properties .individual .input-group {
-  width: 50%;
-  flex-wrap: nowrap !important;
-  border-bottom: 2px dotted #011936;
-  padding: 5px;
+body .container .card-container .border-radius-properties .individual:nth-child(2) {
+  border-top-right-radius: 0;
+  border-right: 0;
 }
-body .container .card-container .border-radius-properties .individual .input-group:nth-child(1), body .container .card-container .border-radius-properties .individual .input-group:nth-child(3) {
-  border-right: 2px dotted #011936;
-}
-body .container .card-container .border-radius-properties .individual .input-group:nth-child(3), body .container .card-container .border-radius-properties .individual .input-group:nth-child(4) {
-  border-bottom: 0;
+body .container .card-container .border-radius-properties .individual:nth-child(3) {
+  border-top-left-radius: 0;
+  border-left-style: dotted;
 }
 body .container .card-container .form-check {
   margin: 0;
@@ -198,7 +193,7 @@ body .container .card-container .border-code .form-floating {
   width: 100%;
 }
 body .container .card-container .border-code .form-floating textarea {
-  height: 95px;
+  height: 75px;
   border: 2px solid #011936;
   border-radius: 5px;
   cursor: copy;
