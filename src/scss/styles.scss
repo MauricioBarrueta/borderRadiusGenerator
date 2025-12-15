@@ -28,9 +28,9 @@ body {
     }
 
     .container {
-        min-height: 95vh;
+        min-height: 90vh;
         .card-container {
-            width: 600px; height: auto;
+            width: 525px; height: auto;
             padding: 1em; border-radius: 10px; box-shadow: 0px 0px 5px 5px $Charcoal;
             background-color: $teaGreen; text-align: center;              
 
@@ -70,15 +70,10 @@ body {
                 }
 
                 .individual { 
-                    display: none; flex-wrap: wrap; padding-bottom: 5px;
-
-                    .input-group {                        
-                        width: 50%; flex-wrap: nowrap !important; 
-                        border-bottom: 2px dotted $oxfordBlue; padding: 5px;
-
-                        &:nth-child(1), &:nth-child(3) { border-right: 2px dotted $oxfordBlue; }
-                        &:nth-child(3), &:nth-child(4) { border-bottom: 0; }
-                    }                                     
+                    display: none; 
+                    flex-direction: column;
+                    &:nth-child(2) { border-top-right-radius: 0; border-right: 0; }
+                    &:nth-child(3) { border-top-left-radius: 0; border-left-style: dotted; }                                     
                 }      
             }  
 
@@ -120,7 +115,7 @@ body {
                 .form-floating {
                     width: 100%;
                     textarea {
-                        height: 95px;
+                        height: 75px;
                         border: 2px solid $oxfordBlue; border-radius: 5px; cursor: copy;
                         font-size: 14px; color: $oxfordBlue;      
                         &::selection { background-color: $naplesYellow; }                  

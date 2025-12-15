@@ -1,7 +1,11 @@
-const general = document.querySelector('.column'), individual = document.querySelector('.individual'), checkBtn = document.getElementById('individual-border-radius')
+const general = document.querySelector('.column'), individual = document.querySelectorAll('.individual'), checkBtn = document.getElementById('individual-border-radius')
 /* Verifica si los valores de la propiedad serán generales o personalizados */
 const generalOrIndividual = () => {
-    checkBtn.checked ? ( general.style.display = 'none', individual.style.display = 'flex') : (general.style.display = '', individual.style.display = 'none')
+    checkBtn.checked ? general.style.display = 'none'  : general.style.display = ''
+    const display = checkBtn.checked ? 'flex' : 'none'
+    individual.forEach(element => {
+        element.style.display = display
+    });
 }
 
 /* Se resetean los valores cada que el elemento 'switch' cambia */
@@ -34,7 +38,7 @@ borderPropertiesInput.forEach(element => {
 const generateBorderRadius = () => {
     var code = checkBtn.checked ? `${topLeft.value}% ${topRight.value}% ${bottomLeft.value}% ${bottomRight.value}%` : `${borderLength.value}%`
     borderRadPreview.style.borderRadius = code
-    cssCode.value = `border-radius: ${code};\n\nborder: 2px solid #000000; //opcional`
+    cssCode.value = `border-radius: ${code};`
 }
 
 const copyBtn = document.querySelector('.copy-btn')
@@ -46,6 +50,6 @@ copyBtn.addEventListener('click', () => {
 
 const resetElements = () => {
     borderPropertiesInput.forEach(element => { element.value = 5 });
-    topLeft.value = topLeftValue.value = bottomLeft.value = bottomLeftValue.value = 25    
+    topLeft.value = topLeftValue.value = bottomLeft.value = bottomLeftValue.value = 30    
     borderRadPreview.style.borderRadius = '5%', checkBtn.checked = false, generateBorderRadius(), generalOrIndividual()
 }
