@@ -4,4 +4,5 @@
 
 🔗 https://mauriciobarrueta.github.io/borderRadiusGenerator
 
-![border-radius](https://github.com/user-attachments/assets/752f7c44-a14f-42d7-a14a-f0d29639c9b3)
+
+<img width="1366" height="653" alt="border-radius" src="https://github.com/user-attachments/assets/84ba48ec-e7d0-46e3-9d79-d741362632a8" />
